@@ -1,0 +1,24 @@
+Data Table2x3;
+Input Abundance Frequency;
+Dfreq=43-(Abundance-1);
+Datalines;
+25 28 
+75 4 
+125 3
+175 3
+225 1
+275 2
+325 1
+375 0
+425 0
+475 0
+525 0
+575 0
+625 1 
+Proc Print;
+title 'Figure 5.1 Bird Species Decreasing Cumulative Frequency Polygon';
+Proc Print;
+Proc SGPlot;
+Series y=Dfreq x=Abundance;
+Run;
+
