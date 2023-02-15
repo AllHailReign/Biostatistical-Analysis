@@ -1,0 +1,21 @@
+Proc Format;
+Value _Activity 1='Grass/fodder' 2='Forest products' 3='Fishing' 4=' Herding' 5='Disturbing tiger kill' 6='Fuelwood/timber' 7='Sleeping in house' 8='Walking' 9='Toilet';
+Data Table2x1;
+Input Activity Num;
+Format Activity _Activity;
+Datalines;
+1 44
+2 11
+3 8
+4 7
+5 5
+6 5
+7 5
+8 3
+9 2
+Proc Print;Run;
+Footnote1 h=1 j=l 'Figure 2.2-1 Bar graph showing the activities of people at the time they were attacked and killed by tigers near Chitwan National Park, Nepal, between 1979 and 2006. Total number of deaths: n = 88. The frequencies are taken from Table 2.2-1, which also gives more detailed labels of activities.';
+Proc SGPlot;
+Vbar Activity/Freq=Num;
+run;
+Quit;
